@@ -1,0 +1,36 @@
+html {
+    background-color: rgb(255, 123, 0);
+}
+
+a {
+    color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: large;
+    padding: 3px;
+}
+
+.welcome {
+    text-align: center;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+p {
+    font-size: 20px;
+}
+
+button {
+    background-color: purple;
+    color: white;
+    padding: 15px 15px;
+    border: 0;
+    border-radius: 10px;
+
+}
