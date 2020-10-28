@@ -23,7 +23,8 @@ h1 {
 }
 
 p {
-    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
 }
 
 button {
@@ -34,3 +35,10 @@ button {
     border-radius: 10px;
 
 }
+
+button:hover {
+    background-color: white;
+    color: purple;
+    transition-duration: 0.5s;
+}
+
