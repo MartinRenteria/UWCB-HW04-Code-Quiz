@@ -5,6 +5,31 @@ var quizQuestions = [{
     answer: "if (i != 10)"
 },
 
+{
+    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
+    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
+    answer: "if (i != 10)"
+},
+
+{
+    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
+    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
+    answer: "if (i != 10)"
+},
+
+{
+    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
+    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
+    answer: "if (i != 10)"
+},
+
+{
+    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
+    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
+    answer: "if (i != 10)"
+},
+
+
 ]
 
 
