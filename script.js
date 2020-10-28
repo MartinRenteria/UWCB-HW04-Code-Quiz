@@ -22,3 +22,11 @@ function start() {
 
     next();
 }
+
+var quizQuestions = [{
+    prompt: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
+    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
+    correctAnswer: "if (i != 10)"
+},
+
+]
