@@ -19,6 +19,6 @@ function start() {
             GameOver();
         }
     }, 1000);
-    
+
     next();
 }
