@@ -41,12 +41,22 @@ p {
     transition-duration: 0.5s;
 }
 
-button {
-    display: inline-flex;
-    flex-direction: column;
+#quizSection button {
+    display: block;
+    text-align: left;
     background-color: purple;
     color: white;
+    margin: 5px 0;
     padding: 15px 15px;
+    width: 15em;
     border: 0;
-    border-radius: 10px;
+    border-radius: 5px;
+}
+
+.hide {
+    display:none;
+}
+  
+.invisible {
+    visibility: hidden;
 }
