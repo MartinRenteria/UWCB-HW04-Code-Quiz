@@ -32,24 +32,24 @@ var quizQuestions = [{
 
 ]
 
-
 // Variables for the timer, score, questions, and time remaining
 var timer;
-var timeRemaining = 0;
+var startTimer = 75;
 var score = 0;
-var questionon = -1;
+var questionon = 0;
+document.getElementById("start").addEventListener("click", start)
 
 // Once the user clicks the start button, the quiz will begin!
+
 function start() {
 
-    timeRemaining = 75;
-    document.getElementById("timeRemaining").innerHTML = timeRemaining;
+    document.getElementById("startTimer").innerHTML = startTimer;
 
     timer = setInterval(function() {
-        timeRemaining--;
-        document.getElementById("timeRemaining").innerHTML = timeRemaining;
+        startTimer--;
+        document.getElementById("startTimer").innerHTML = startTimer;
         //When the timer hits zero, the game will end 
-        if (timeRemaining <= 0) {
+        if (startTimer <= 0) {
             clearInterval(timer);
             GameOver();
         }
@@ -66,10 +66,11 @@ function correctAnswer() {
 
 // If the answer gets the answer wrong, the user will lose 10 seconds on the timer and not receive points. 
 function incorrectAnswer() {
-    timeRemaining -= 10;
+    startTimer -= 10;
     next();
 }
 
+/*
 // Potential question loop
 function next() {
     questionon++;
@@ -83,3 +84,4 @@ function next() {
 
     document.getElementById("welcome").innerHTML = quizlayout;
 }
+*/

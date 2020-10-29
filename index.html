@@ -18,13 +18,38 @@
             <h1>Coding Quiz Challenge</h1>
             <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
             <p>Good Luck! Have fun!</p>
-
-            <button onclick="start()">Start Quiz</button>
-
+            <button id="start">Start Quiz</button>
         </section>
 
-    </main>
+        <section id="quizSection" class="hide">
+            <p id="quizQuestion"></p>
+            <!-- Buttons that will receive question selections when start button is clicked-->
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <div id="answerindicator" class="invisible">
+              <p>Placeholder</p>
+            </div>
+          </section>
+        <!--The end screen for the quiz once the timer runs out or user complete the quiz-->
+          <section id="end" class="hide">
+            <h1>Finished!</h1>
+            <p>Your final score is<span id="score"></span></p>
+            <div id="info">
+              <p>Enter initials: </p><input id="userInitials" type="text"> <button>Submit</button>
+            </div>
+          </section>
+        <!--Screen that will be displayed once the user submits their initials. 
+            User can choose to go back to starting page or clear thier highscores-->
+          <section id="highScores" class="hide">
+            <h1>High Scores</h1>
+            <div>
+        </div>
+            <button id="Home">Go Back</button> <button id="clearScores">Clear Highscores</button>
+          </section>
 
+    </main>
         </div>
 </body>
 </html>

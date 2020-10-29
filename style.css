@@ -27,18 +27,26 @@ p {
     font-size: 25px;
 }
 
-button {
+#start {
     background-color: purple;
     color: white;
     padding: 15px 15px;
     border: 0;
     border-radius: 10px;
-
 }
 
-button:hover {
+#start:hover {
     background-color: white;
     color: purple;
     transition-duration: 0.5s;
 }
 
+button {
+    display: inline-flex;
+    flex-direction: column;
+    background-color: purple;
+    color: white;
+    padding: 15px 15px;
+    border: 0;
+    border-radius: 10px;
+}
