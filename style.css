@@ -1,20 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     background-color: rgb(255, 123, 0);
 }
 
 a {
+    background-color: #834bc2;
     color: white;
+    padding: 5px;
 }
 
 header {
+    background: #613a8d;
+    color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size: large;
-    padding: 3px;
+    padding: 20px;
 }
 
-.welcome {
+section {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+
+#welcome {
     text-align: center;
 }
 
@@ -25,6 +39,11 @@ h1 {
 p {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 25px;
+}
+
+button {
+    color: white;
+    background-color: #41275e;
 }
 
 #start {
@@ -43,7 +62,6 @@ p {
 
 #quizSection button {
     display: block;
-    text-align: left;
     background-color: purple;
     color: white;
     margin: 5px 0;
@@ -53,8 +71,9 @@ p {
     border-radius: 5px;
 }
 
+
 .hide {
-    display:none;
+    display: none;
 }
   
 .invisible {

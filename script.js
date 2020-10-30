@@ -1,74 +1,71 @@
-// Quiz questions 
-var quizQuestions = [{
-    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
-    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
-    answer: "if (i != 10)"
-},
-
-{
-    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
-    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
-    answer: "if (i != 10)"
-},
-
-{
-    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
-    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
-    answer: "if (i != 10)"
-},
-
-{
-    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
-    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
-    answer: "if (i != 10)"
-},
-
-{
-    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
-    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
-    answer: "if (i != 10)"
-},
-
-
-]
 
 // Variables for the timer, score, questions, and time remaining
-var timer;
-var startTimer = 75;
-var score = 0;
-var questionon = 0;
-document.getElementById("start").addEventListener("click", start)
+const startTime = 75;
+let timeRemaining = 0;
+let score = 0;
+let questionon = 0;
+let timer;
+let answers = document.querySelectorAll('#quizSection button');
+
+var back = document.getElementById("goBack");
+var clear = document.getElementById("clearScores");
+var quizlayout = document.getElementById("welcome")
 
 // Once the user clicks the start button, the quiz will begin!
 
 function start() {
 
-    document.getElementById("startTimer").innerHTML = startTimer;
+    var element = document.getElementById("quizSection");
+    element.classList.remove("hide");
+    document.getElementById("welcome");
+    quizlayout.classList.add("hide");
+
+    timeRemaining = 75;
+    document.getElementById("timeRemaining").innerHTML = timeRemaining;
 
     timer = setInterval(function() {
-        startTimer--;
-        document.getElementById("startTimer").innerHTML = startTimer;
-        //When the timer hits zero, the game will end 
-        if (startTimer <= 0) {
+        timeRemaining--;
+        document.getElementById("timeRemaining").innerHTML = timeRemaining;
+        //proceed to end the game function when timer is below 0 at any time
+        if (timeRemaining <= 0) {
             clearInterval(timer);
-            GameOver();
         }
     }, 1000);
-
-    next();
 }
 
-// If the answer is correct, no changes will be made to the timer and the user will receive 10 points 
-function correctAnswer() {
-    score += 20;
-    next();
-}
+    // Quiz questions 
+var questions = [{
+    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
+    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
+    answer: "if (i != 10)"
+},
 
-// If the answer gets the answer wrong, the user will lose 10 seconds on the timer and not receive points. 
-function incorrectAnswer() {
-    startTimer -= 10;
-    next();
-}
+{
+    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
+    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
+    answer: "if (i != 10)"
+},
+
+{
+    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
+    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
+    answer: "if (i != 10)"
+},
+
+{
+    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
+    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
+    answer: "if (i != 10)"
+},
+
+{
+    question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
+    choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
+    answer: "if (i != 10)"
+},
+
+]
+
 
 /*
 // Potential question loop
