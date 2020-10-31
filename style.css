@@ -12,6 +12,16 @@ a {
     padding: 5px;
 }
 
+main {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
 header {
     background: #613a8d;
     color: white;
@@ -25,6 +35,13 @@ header {
 section {
     max-width: 50%;
     margin: 0 auto;
+}
+
+#openingPage {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 
@@ -60,15 +77,23 @@ button {
     transition-duration: 0.5s;
 }
 
+#quizSection {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    overflow: hidden
+}
+
 #quizSection button {
-    display: block;
+    display: flex;
+    flex-direction: column;
     background-color: purple;
     color: white;
-    margin: 5px 0;
     padding: 15px 15px;
-    width: 15em;
     border: 0;
     border-radius: 5px;
+    width: 50%;
+    margin: 0 0 20px 0;
 }
 
 
