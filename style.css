@@ -33,7 +33,10 @@ header {
 }
 
 section {
-    max-width: 50%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -81,7 +84,7 @@ button {
     width: 100%;
     text-align: center;
     justify-content: center;
-    overflow: hidden
+    overflow: hidden;
 }
 
 #quizSection button {
