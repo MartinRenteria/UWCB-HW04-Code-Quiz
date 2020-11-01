@@ -9,8 +9,8 @@
 </head>
 <body>
     <header>
-        <a id="highscore_link" href="#">View Highscores</a>
-        <div id="timer">Timer: <span id="timeRemaining">0</span></div>
+        <a onclick="highscore_link()" href="#">View Highscores</a>
+        <div>Timer: <span id="timeRemaining">0</span></div>
     </header>
 
     <main>
@@ -40,7 +40,7 @@
             <h1>Finished!</h1>
             <p>Your final score is<span id="score"></span></p>
             <div id="info">
-              <p>Enter initials: </p><input id="userInitials" type="text"> <button id="submitBtn">Submit</button>c;
+              <p>Enter initials: </p><input id="userInitials" type="text"> <button id="submitBtn">Submit</button>
             </div>
           </section>
         <!--Screen that will be displayed once the user submits their initials. 
