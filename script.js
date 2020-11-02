@@ -1,17 +1,17 @@
 
 // Variables for the timer, score, questions, and time remaining
-var time = 0;
+let startTime = 75;
+let timer = 0;
 let score = 0;
 let currentQuestion;
 let randomQuestion;
 let questionIndex;
-let timer;
 
 // Starting page variables 
 var startBtn = document.getElementById("start");
 startBtn.addEventListener("click", start);
 var quizStart = document.getElementById("welcome");
-document.getElementById("timeRemaining").innerHTML = time;
+var timeEl = document.getElementById("timeRemaining");
 
 // Question and choice buttons 
 var quizLayout = document.getElementById("quizSection");
@@ -38,9 +38,6 @@ var clear = document.getElementById("clearScores");
 // Once the user clicks the start button, the quiz will begin!
     function start() {
 
-        //Time will start at 75 seconds 
-        time = 75;
-        document.getElementById("timeRemaining").innerHTML = time;
         // When the quiz starts, the starting page will disappear and the question page will display
         quizLayout.classList.remove("hide");
         welcome.classList.add("hide");
@@ -52,16 +49,21 @@ var clear = document.getElementById("clearScores");
         questionDisplay(randomQuestion, questionIndex);
     
         // Time will go down by 1 second each time and if it goes below 0 the quiz will stop and go to the score page
-        timer = setInterval(function() {
-            time--;
-            document.getElementById("timeRemaining").innerHTML = time;
-            //proceed to end the game function when timer is below 0 at any time
-            if (time <= 0) {
-                clearInterval(timer);
+        timer = startTime;
+        interval = setInterval(function() {
+            if (timer > 0) {
+                timer--;
+                timeDisplay()
+             } else { 
+                clearInterval(interval);
                 finish(); 
             }
         }, 1000);
     
+    }
+
+function timeDisplay() {
+    timeEl.textContent = timer;
     }
 
 function questionDisplay(randomQuestion, questionIndex) {
@@ -124,7 +126,7 @@ function resetQuestions() {
 function incorrect() {
 
     // Decreases 10 seconds off the timer for an incorrect answer
-     time -= 10;
+     timer -= 10;
 
     // Displays 'wrong' letting user know they were incorrect
     wrongDisplay.classList.remove('hide')
