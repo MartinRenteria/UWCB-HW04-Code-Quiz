@@ -1,8 +1,18 @@
 // Starting page variables 
-var startBtn = document.getElementById("start");
+var startBtn = document.querySelector("start");
 startBtn.addEventListener("click", start);
-var quizStart = document.getElementById("welcome");
-var timeEl = document.getElementById("timeRemaining");
+var quizStart = document.querySelector("main");
+var timeEl = document.querySelector("#timeRemaining");
+
+//Variables for timer, questions list/answers, and for end result
+var timeLeft = 0;
+var score = 0;
+var initialTime =  75;
+var questionEl;
+var answerEl;
+var Output;
+var ListEl
+var button
 
 
     // Quiz questions 
@@ -37,3 +47,22 @@ var questions = [{
 },
 
 ]
+
+function start() {
+    var questionIndex = 0;
+
+    start();
+
+    questionEl = document.createElement("h2");
+    answerList = document.createElement("ol");
+    result = document.createElement("p");
+
+    makeQuestionsAppear(questionIndex);
+}
+
+function makeQuestionsAppear(questionIndex) {
+    quizStart.innerHTML  = "";
+    questionEl.innerHTML = "";
+    answerList.innerHTML = "";
+
+}
