@@ -135,3 +135,34 @@ function changeTime() {
     timeEl.textContent = timeLeft;
 }
 
+function userScore() {
+    quizStart.innerHTML = "";
+
+    var resultsH1 = document.createElement("h1");
+    resultsH1.textContent = "Finished!"
+    quizStart.appendChild(resultsH1);
+
+    var resultsP = document.createElement("p");
+    var resultsBr = document.createElement("br");
+    resultsP.textContent = "Your final score is: " + score + "/4";
+    quizStart.appendChild(resultsP, resultsBr);
+
+    var resultForm = document.createElement("FORM")
+    var resultLabel = document.createElement("label");
+    var resultInput = document.createElement("input");
+    var resultBtn = document.createElement("button");
+    resultLabel.setAttribute("id", "rLabel")
+    resultLabel.innerHTML = "Your Initials: ";  
+    resultInput.setAttribute("type", "text");
+    resultInput.setAttribute("name", "initials");
+    resultBtn.setAttribute("id", "start");
+    resultBtn.textContent = "Submit";
+    resultForm.appendChild(resultLabel);
+    resultForm.appendChild(resultInput);
+    resultForm.appendChild(resultBtn);
+    quizStart.appendChild(resultForm);
+
+
+}
+
+
