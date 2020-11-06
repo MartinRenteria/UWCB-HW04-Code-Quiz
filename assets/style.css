@@ -57,13 +57,14 @@ h1 {
 
 li {
     font-size: 30px;
+    height: 70px;
 }
 
 li button {
-    background-color: #613a8d;
-    color: white;
     display: flex;
     flex-direction: row;
+    background-color: #613a8d;
+    color: white;
     font-size: large;
     padding: 20px;
     width: 30em;

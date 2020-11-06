@@ -86,7 +86,7 @@ function makeQuestionsAppear(questionIndex) {
         }
         quizStart.appendChild(answerSelection);
         outputDisplay = document.createElement("p");
-        quizStart.appendChild(output);
+        quizStart.appendChild(outputDisplay);
         // If the user gets the answrer correct, the sceen will say correct!
         // If the user gets the answer wrong, the screen will display 'wrong' and then get deducted 10 seconds. 
         // Each of the displays will last for 1 second and then move on to the next question. 
