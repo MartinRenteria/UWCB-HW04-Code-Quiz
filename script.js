@@ -1,6 +1,6 @@
 // Starting page variables 
-var startBtn = document.querySelector("start");
-startBtn.addEventListener("click", start);
+var startBtn = document.querySelector("#start");
+startBtn.addEventListener("click", beginQuiz);
 var quizStart = document.querySelector("main");
 var timeEl = document.querySelector("#timeRemaining");
 
@@ -9,9 +9,9 @@ var timeLeft = 0;
 var score = 0;
 var initialTime =  75;
 var questionEl;
-var answerEl;
-var Output;
-var ListEl
+var answerSelection;
+var output;
+var questionList
 var button
 
 
@@ -19,50 +19,119 @@ var button
 var questions = [{
     question: "How do we write an IF statement for executing some code if 'i' is NOT equal to 10?",
     choices: ["if (i != 10)", "if i <> 10", "if i =! 10", "if (i <= 10)"],
-    answer: "if (i != 10)",
+    correctChoice: "if (i != 10)",
 },
 
 {
     question: "Inside which HTML element do we put the JavaScript?",
     choices: ["<script>", "<scripting>", "<javascript", "<js>"],
-    answer: "<script>",
+    correctChoice: "<script>",
 },
 
 {
     question: "What is the correct JavaScript syntax to change the content of the HTML element below?",
     choices: ["document.getElementById('quiz').innerHTML = 'Hello World!'", "document.getElement('p').innerHTML = 'Hello World!';", "#quiz.innerHTML = 'Hello World!'';", "document.getElement('quiz').innerHTML = 'Hello World!'"],
-    answer: "document.getElementById('quiz').innerHTML = 'Hello World!'",
+    correctChoice: "document.getElementById('quiz').innerHTML = 'Hello World!'",
 },
 
 {
     question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
     choices: ["<script src='xxx.js'>", "<script href='xxx.js'>", "<script name='xxx.js'>", "script type='javascript'"],
-    answer: "<script src='xxx.js'>",
+    correctChoice: "<script src='xxx.js'>",
 },
 
 {
     question: "Where is the correct place to insert a JavaScript?",
     choices: ["The <body> section", "The <head> section", "Both the <head> section and the <body> section are correct", "The <header> section"],
-    answer: "Both the <head> section and the <body> section are correct",
+    correctChoice: "Both the <head> section and the <body> section are correct",
 },
 
 ]
 
-function start() {
+// Initial function that will begin the timer, set the questions and choices to display and setting the intial variables for those functions.
+function beginQuiz() {
     var questionIndex = 0;
 
-    start();
+    startTimer();
 
     questionEl = document.createElement("h2");
-    answerList = document.createElement("ol");
-    result = document.createElement("p");
+    answerSelection = document.createElement("ol");
+    output = document.createElement("p");
 
     makeQuestionsAppear(questionIndex);
 }
 
+// Sets the questions to display in the HTML file
 function makeQuestionsAppear(questionIndex) {
     quizStart.innerHTML  = "";
     questionEl.innerHTML = "";
-    answerList.innerHTML = "";
+    answerSelection.innerHTML = "";
+    // If the timer reaches zero or the user runs out of questions, the quiz will end 
+    if(questionIndex >= questions.length || timeLeft <= 0) {
+        clearInterval(interval);
+        userScore();
+        return;
+    }
+    questionEl.innerText = questions[questionIndex].question;
+    quizStart.appendChild(questionEl);
 
+        for (var i = 0; i < 4; i++) {
+            questionList = document.createElement("li");
+            questionList.setAttribute("data-index", i);
+
+            button = document.createElement("button");
+            button.textContent = questions[questionIndex].choices[i];
+            questionList.appendChild(button);
+            answerSelection.appendChild(questionList);
+        }
+        quizStart.appendChild(answerSelection);
+        outputDisplay = document.createElement("p");
+        quizStart.appendChild(output);
+        // If the user gets the answrer correct, the sceen will say correct!
+        // If the user gets the answer wrong, the screen will display 'wrong' and then get deducted 10 seconds. 
+        // Each of the displays will last for 1 second and then move on to the next question. 
+        answerSelection.addEventListener("click", function(event) {
+            event.preventDefault();
+            var element = event.target;
+                    
+            if (element.matches("button") === true) {
+                var answer = element.textContent;
+                if(answer === questions[questionIndex].correctChoice){
+                    outputDisplay.innerText = "Correct!";
+                    score++;
+                } else {
+                    outputDisplay.innerText = "Wrong!";
+                    timeLeft -= 10;
+                }
+
+                questionIndex++;
+    
+                setTimeout(function() {
+                    makeQuestionsAppear(questionIndex);
+                }, 1000);
+            }
+
+        }, {once: true}); 
 }
+
+// Function that makes the timer start ticking down 1 second and then at the end of the time will display the user's score
+function startTimer(){
+    timeLeft = initialTime;
+    interval = setInterval(function() {
+        if (timeLeft > 0) {
+            timeLeft--;
+            changeTime();
+        } else {
+            clearInterval(interval);
+            timeLeft = 0;
+            changeTime();
+            userScore();
+        }
+    }, 1000);
+}
+
+// Allows the html page to start counting down from initial time of 75 seconds. 
+function changeTime() {
+    timeEl.textContent = timeLeft;
+}
+
