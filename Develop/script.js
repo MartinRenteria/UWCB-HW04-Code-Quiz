@@ -48,16 +48,16 @@ var questions = [{
 
 ]
 
-// Initial function that will begin the timer, set the questions and choices to display and setting the intial variables for those functions.
+// Initial function that will begin the timer, set the questions and choices to display, and setting the intial variables for those functions.
 function beginQuiz() {
     var questionIndex = 0;
-
+// When my startTimer functions runs, it will display the questions from my array and it's choices onto the screen.
     startTimer();
 
     questionEl = document.createElement("h2");
     answerSelection = document.createElement("ol");
     output = document.createElement("p");
-
+// Function that calls my question arrays.
     makeQuestionsAppear(questionIndex);
 }
 
