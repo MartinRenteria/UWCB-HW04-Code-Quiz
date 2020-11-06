@@ -135,6 +135,7 @@ function changeTime() {
     timeEl.textContent = timeLeft;
 }
 
+//Results page
 function userScore() {
     quizStart.innerHTML = "";
 
@@ -162,7 +163,25 @@ function userScore() {
     resultForm.appendChild(resultBtn);
     quizStart.appendChild(resultForm);
 
+    //Local Storage
+    resultBtn.addEventListener("click", function(e) {
+        e.preventDefault.();
 
+        var userInitials = resultInput.value;
+        var initialObject = {
+            initials: newUserInitials,
+            score: score};
+
+            if (localStorage.getItem("High-Scores") === null) {
+                localStorage.setItem("High-Scores"), JSON.stringify(initialObject);
+
+            } else {
+                var HighScore = localStorage.getItem("High-Scores");
+                var HighScoreObject = JSON.parse(HighScore);
+                var array = [];
+
+            }
+            }
+        }
+    )
 }
-
-
