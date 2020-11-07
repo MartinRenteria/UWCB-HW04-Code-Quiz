@@ -2,10 +2,10 @@
 
 Links:
 
-Github Page:
+Live Site:
 https://martinrenteria.github.io/Developer-Coding-Quiz/
 
-Repo Link:
+Github Page:
 https://github.com/MartinRenteria/Developer-Coding-Quiz
 
 04 Web APIs: Code Quiz
