@@ -1,6 +1,5 @@
 // Starting page variables 
 var startBtn = document.querySelector("#start");
-startBtn.addEventListener("click", beginQuiz);
 var quizStart = document.querySelector("main");
 var timeEl = document.querySelector("#timeRemaining");
 
@@ -11,8 +10,8 @@ var initialTime =  75;
 var questionEl;
 var answerSelection;
 var output;
-var questionList
-var button
+var questionList;
+var button;
 
 
     // Quiz questions 
@@ -145,43 +144,52 @@ function userScore() {
 
     var resultsP = document.createElement("p");
     var resultsBr = document.createElement("br");
-    resultsP.textContent = "Your final score is: " + score + "/4";
+    resultsP.textContent = "Your final score is: " + score + "/5";
     quizStart.appendChild(resultsP, resultsBr);
 
-    var resultForm = document.createElement("FORM")
+    var resultForm = document.createElement("FORM");
     var resultLabel = document.createElement("label");
     var resultInput = document.createElement("input");
     var resultBtn = document.createElement("button");
-    resultLabel.setAttribute("id", "rLabel")
+    resultForm.setAttribute("id", "rLabel");
     resultLabel.innerHTML = "Your Initials: ";  
     resultInput.setAttribute("type", "text");
     resultInput.setAttribute("name", "initials");
-    resultBtn.setAttribute("id", "start");
     resultBtn.textContent = "Submit";
+    resultBtn.setAttribute("id", "start");
     resultForm.appendChild(resultLabel);
     resultForm.appendChild(resultInput);
     resultForm.appendChild(resultBtn);
     quizStart.appendChild(resultForm);
+    quizStart.appendChild(resultBtn);
 
     //Local Storage
     resultBtn.addEventListener("click", function(e) {
-        e.preventDefault.();
+        e.preventDefault();
 
         var userInitials = resultInput.value;
         var initialObject = {
-            initials: newUserInitials,
+            initials: userInitials,
             score: score};
 
             if (localStorage.getItem("High-Scores") === null) {
-                localStorage.setItem("High-Scores"), JSON.stringify(initialObject);
+                localStorage.setItem("High-Scores", JSON.stringify(initialObject));
 
             } else {
-                var HighScore = localStorage.getItem("High-Scores");
-                var HighScoreObject = JSON.parse(HighScore);
+                var HighScoreEL = localStorage.getItem("High-Scores");
+                var HighScoreObject = JSON.parse(HighScoreEL);
                 var array = [];
 
+            if (HighScoreObject.length) {
+            HighScoreObject.map(item => array.push(item))
+            } else {
+                array.push(HighScoreObject);
             }
-            }
+            array.push(initialObject);
+            savedString = JSON.stringify(array);
+            localStorage.setItem("High-Scores", savedString);
         }
-    )
+            window.location.href = "highScores.html";
+    })
 }
+    startBtn.addEventListener("click", beginQuiz);
