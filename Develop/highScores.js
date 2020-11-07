@@ -21,18 +21,15 @@ function highscores() {
     var questionList;
 
     if (HighScoreObject.length) {
-
-    for (var x in HighScoreObject) {
-      questionList = document.createElement("li");
-      questionList.innerHTML = `initials: ${HighScoreObject[x].initials} | score: ${HighScoreObject[x].score}`;
-      highscoreLi.appendChild(questionList);
-    }
-    } else {
+      for (var x in HighScoreObject) {
         questionList = document.createElement("li");
-        questionList.innerHTML = `initials: ${HighScoreObject.initials} | score: ${HighScoreObject.score}`;
+        questionList.innerHTML = `initials: ${HighScoreObject[x].initials} | score: ${HighScoreObject[x].score}`;
         highscoreLi.appendChild(questionList);
+      }
+    } else {
+      questionList = document.createElement("li");
+      questionList.innerHTML = `initials: ${HighScoreObject.initials} | score: ${HighScoreObject.score}`;
+      highscoreLi.appendChild(questionList);
     }
   }
 }
-
-

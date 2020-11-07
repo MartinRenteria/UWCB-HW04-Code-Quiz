@@ -1,102 +1,101 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    background-color: rgb(255, 123, 0);
+  background-color: rgb(255, 123, 0);
 }
 
 a {
-    background-color: rgb(116, 75, 158);
-    color: white;
-    padding: 5px;
+  background-color: rgb(116, 75, 158);
+  color: white;
+  padding: 5px;
 }
 
 main {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 500px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
 }
 
 header {
-    background: #613a8d;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: large;
-    padding: 20px;
+  background: #613a8d;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: large;
+  padding: 20px;
 }
 
 section {
-    display: block;
-    align-items: center;
-    justify-content: center;
-    max-width: 80%;
-    margin: 0 auto;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 #openingPage {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-
 #welcome {
-    text-align: center;
+  text-align: center;
 }
 
 h1 {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 li {
-    font-size: 30px;
-    border: 2px solid white;
+  font-size: 30px;
+  border: 2px solid white;
 }
 
 li button {
-    display: flex;
-    flex-direction: row;
-    background-color: #613a8d;
-    color: white;
-    font-size: large;
-    padding: 20px;
-    width: 30em;
+  display: flex;
+  flex-direction: row;
+  background-color: #613a8d;
+  color: white;
+  font-size: large;
+  padding: 20px;
+  width: 30em;
 }
 
 p {
-    color: black;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 25px;
+  color: black;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 25px;
 }
 
 button {
-    color: white;
-    background-color: #41275e;
-    border: 3px solid black;
+  color: white;
+  background-color: #41275e;
+  border: 3px solid black;
 }
 
 #start {
-    background-color: purple;
-    color: white;
-    padding: 15px 15px;
-    border: 0;
-    border-radius: 10px;
-    border: 3px solid black;
+  background-color: purple;
+  color: white;
+  padding: 15px 15px;
+  border: 0;
+  border-radius: 10px;
+  border: 3px solid black;
 }
 
 #start:hover {
-    background-color: white;
-    color: purple;
-    transition-duration: 0.5s;
+  background-color: white;
+  color: purple;
+  transition-duration: 0.5s;
 }
 
 #rLabel {
-    font-size: 30px;
+  font-size: 30px;
 }

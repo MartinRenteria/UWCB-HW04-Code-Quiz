@@ -200,7 +200,7 @@ function userScore() {
       var array = [];
 
       if (HighScoreObject.length) {
-        HighScoreObject.map(item => array.push(item))
+        HighScoreObject.map((item) => array.push(item));
       } else {
         array.push(HighScoreObject);
       }
@@ -209,6 +209,6 @@ function userScore() {
       localStorage.setItem("High-Scores", savedString);
     }
     window.location.href = "highScores.html";
-  })
+  });
 }
 startBtn.addEventListener("click", beginQuiz);
